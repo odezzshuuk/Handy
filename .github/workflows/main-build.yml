@@ -6,7 +6,7 @@ name: "Main Branch Build"
 
 on:
   push:
-    branches: [main]
+    branches: [main, wip/minimizing]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
