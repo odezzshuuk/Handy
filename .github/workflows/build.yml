@@ -270,16 +270,6 @@ jobs:
           assetNamePattern: ${{ steps.patch-release-name.outputs.platform }}
           args: ${{ inputs.build-args }}
 
-      - name: Upload artifacts (macOS)
-        if: inputs.upload-artifacts && contains(inputs.platform, 'macos')
-        uses: actions/upload-artifact@v7
-        with:
-          name: ${{ inputs.asset-prefix }}-${{ inputs.target }}
-          path: |
-            src-tauri/target/${{ inputs.target }}/${{ steps.build-profile.outputs.profile }}/bundle/dmg/*.dmg
-            src-tauri/target/${{ inputs.target }}/${{ steps.build-profile.outputs.profile }}/bundle/macos/*.app
-          retention-days: 30
-
       - name: Install FUSE for AppImage processing
         if: contains(inputs.platform, 'ubuntu')
         run: |

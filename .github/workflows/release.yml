@@ -124,14 +124,24 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ needs.create-release.outputs.source-run-id }}
 
+      - name: List downloaded artifact files
+        shell: bash
+        run: |
+          if [ ! -d release-artifacts ]; then
+            echo "release-artifacts directory does not exist"
+            exit 1
+          fi
+
+          echo "Downloaded files:"
+          find release-artifacts -type f | sort
+
       - name: Upload artifacts to draft release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          shopt -s nullglob
-          files=(release-artifacts/*)
+          mapfile -d '' files < <(find release-artifacts -type f -print0 | sort -z)
 
           if [ ${#files[@]} -eq 0 ]; then
             echo "No artifacts were downloaded from run ${{ needs.create-release.outputs.source-run-id }}"
