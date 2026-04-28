@@ -7,6 +7,13 @@ name: "Minimal Branch Build"
 on:
   push:
     branches: [minimal, wip/minimizing]
+    paths-ignore:
+      - "**/*.md"
+      - ".github/workflows/release.yml"
+      - "FUNDING.yml"
+      - ".github/FUNDING.yml"
+      - ".github/ISSUE_TEMPLATE/**"
+      - "sponsor-images/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
