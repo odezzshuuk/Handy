@@ -1040,6 +1040,9 @@
   "html-url-attributes@3.0.1" = fetchurl {
     url = "https://registry.npmjs.org/html-url-attributes/-/html-url-attributes-3.0.1.tgz";
     hash = "sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==";
+  "husky@9.1.7" = fetchurl {
+    url = "https://registry.npmjs.org/husky/-/husky-9.1.7.tgz";
+    hash = "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==";
   };
   "i18next@25.7.2" = fetchurl {
     url = "https://registry.npmjs.org/i18next/-/i18next-25.7.2.tgz";
