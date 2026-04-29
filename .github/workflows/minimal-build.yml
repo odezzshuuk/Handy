@@ -1,12 +1,19 @@
-name: "Main Branch Build"
+name: "Minimal Branch Build"
 
-# Runs the full cross-platform build on every push to main so breakage is
+# Runs the full cross-platform build on every push to minimal so breakage is
 # caught before a manual release is triggered. Artifacts are kept for 30 days
-# so any commit on main has a downloadable, testable build.
+# so any commit on minimal has a downloadable, testable build.
 
 on:
   push:
-    branches: [main, wip/minimizing]
+    branches: [minimal, wip/minimizing]
+    paths-ignore:
+      - "**/*.md"
+      - ".github/workflows/release.yml"
+      - "FUNDING.yml"
+      - ".github/FUNDING.yml"
+      - ".github/ISSUE_TEMPLATE/**"
+      - "sponsor-images/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
