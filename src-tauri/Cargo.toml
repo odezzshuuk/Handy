@@ -1,11 +1,11 @@
 [package]
 name = "handy"
-version = "0.8.3"
-description = "Handy"
+version = "0.0.1"
+description = "handy-minimal"
 authors = ["odezzshuuk"]
 edition = "2021"
 license = "MIT"
-default-run = "handy"
+default-run = "handy-minimal"
 
 [profile.dev]
 incremental = true # Compile your binary in smaller steps.
