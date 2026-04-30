@@ -1,5 +1,5 @@
 [package]
-name = "handy"
+name = "handy-minimal"
 version = "0.0.1"
 description = "handy-minimal"
 authors = ["odezzshuuk"]
