@@ -6,7 +6,7 @@ name: "Minimal Branch Build"
 
 on:
   push:
-    branches: [minimal, wip/minimizing]
+    branches: [minimal, wip/merge-update]
     paths-ignore:
       - "**/*.md"
       - ".github/workflows/release.yml"
